@@ -109,8 +109,6 @@ d3.csv('./assets/data/data.csv').then(function(rawdata) {
         .attr('r', 10)
         .attr('opacity', '.55');
 
-
-
 //Build a Tool-Tip function:
     var toolTip = d3
         .tip()
