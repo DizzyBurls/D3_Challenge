@@ -7,13 +7,11 @@
 
 The D3 project that you are currently viewing comprises the following key components:
 
-a) This ReadMe file
-.
-b) A folder of Screen Captures
-.
+a) This ReadMe file<br>
+b) A folder of Screen Captures<br>
 c) The project folder: Instructions
 
-The latter contains the key files:
+The latter contains the key files:<br>
 
 (1) index.html <br>
 (2) app.js <br>      
@@ -38,7 +36,7 @@ See screen captures 1 - 4 which I have uploaded to this repository. They show ma
 
 ![alt text](Screen_Captures/Screen_Capture_3-Tool-Tip.png)
 
-4) The Horizontal Bar Chart:
+4) The necessary ammendment to the index.html file:
 
 ![alt text](Screen_Captures/Screen_Capture_4-Ammendment_to_HTML.png)
 
