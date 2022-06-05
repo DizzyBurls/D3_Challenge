@@ -94,7 +94,7 @@ d3.csv('./assets/data/data.csv').then(function(rawdata) {
     chartGroup.append("text")
         .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + margin.top -5})`)
         .classed('aText', true)
-        .text("Average Age of the Population");
+        .text("Average Age of the Population (years)");
 
 // Add circular markers to the chart for each state:
     var circlesGroup = chartGroup.selectAll('circle')
