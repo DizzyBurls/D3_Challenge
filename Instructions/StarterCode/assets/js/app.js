@@ -30,7 +30,7 @@ var chartGroup = svg.append("g")
 // Import the data from the CSV file:
 d3.csv('./assets/data/data.csv').then(function(rawdata) {
 
-    // Console log the raw data to ensure that it has been retrieved correctly and in full.
+// Console log the raw data to ensure that it has been retrieved correctly and in full.
     console.log(rawdata);
 
 //Convert the data to numbers:
@@ -67,20 +67,6 @@ d3.csv('./assets/data/data.csv').then(function(rawdata) {
     var yAxis = chartGroup.append('g')
         .classed('y-axis', true)
         .call(leftAxis);
-
-// Add circular markers to the chart for each state:
-    var circlesGroup = chartGroup.selectAll('circle')
-        .data(rawdata)
-        .enter()
-        .append('circle')
-
-    // Give each circle a class = "stateCircle" which references the d3Style.css file:
-        .classed('stateCircle', true)
-        .attr('cx', data => xLinearScale(data.age))
-        .attr('cy', data => yLinearScale(data.smokes))
-        .attr('r', 10)
-        .attr('opacity', '.75');
-
 // Add a text group where each element has the class = "stateText" which references d3Style.css:
     var textGroup = chartGroup.selectAll('stateText')
         .data(rawdata)
@@ -110,6 +96,21 @@ d3.csv('./assets/data/data.csv').then(function(rawdata) {
         .classed('aText', true)
         .text("Average Age of the Population");
 
+// Add circular markers to the chart for each state:
+    var circlesGroup = chartGroup.selectAll('circle')
+        .data(rawdata)
+        .enter()
+        .append('circle')
+
+    // Give each circle a class = "stateCircle" which references the d3Style.css file:
+        .classed('stateCircle', true)
+        .attr('cx', data => xLinearScale(data.age))
+        .attr('cy', data => yLinearScale(data.smokes))
+        .attr('r', 10)
+        .attr('opacity', '.55');
+
+
+
 //Build a Tool-Tip function:
     var toolTip = d3
         .tip()
@@ -128,8 +129,8 @@ d3.csv('./assets/data/data.csv').then(function(rawdata) {
         });
 
 // Program the Tool-Tip to disappear when the mouse is moved away:
-        on("mouseout", function(data) {
-        toolTip.hide(data);
+    circlesGroup.on("mouseout", function(data) {
+        toolTip.hide(data, this);
         });
 
 });
