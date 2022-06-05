@@ -108,27 +108,28 @@ d3.csv('./assets/data/data.csv').then(function(rawdata) {
     chartGroup.append("text")
         .attr("transform", `translate(${chartWidth / 2}, ${chartHeight + margin.top -5})`)
         .classed('aText', true)
-        .text("Median Age of the Population");
+        .text("Average Age of the Population");
 
 //Build a Tool-Tip function:
-    var toolTip = d3.tip
+    var toolTip = d3
+        .tip()
         .attr("class", "d3-tip")
-        .offset([80, -60])
+        .offset([0, 0])
         .html(function(data) {
-        return (`State:${data.state}<br>Average Age of Population: ${data.age}<br>Percentage of Smokers: ${data.smokes}`);
+        return (`State: ${data.state}<br>Average Age of Population: ${data.age}<br>Percentage of Smokers: ${data.smokes}`);
         });
 
 // Add the Tool-Tip to the chart group established earlier:
     chartGroup.call(toolTip);
 
-// Program the Tool-Tip to activate when circle is clicked:
-    circlesGroup.on("click", function(data, index) {
+// Program the Tool-Tip to activate when the mouse hovers over a circle:
+    circlesGroup.on("mouseover", function(data) {
         toolTip.show(data, this);
         });
 
 // Program the Tool-Tip to disappear when the mouse is moved away:
         on("mouseout", function(data) {
-        toolTip.hide(data, index);
+        toolTip.hide(data);
         });
 
 });
