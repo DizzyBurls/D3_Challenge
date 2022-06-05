@@ -34,7 +34,7 @@ See screen captures 1 - 4 which I have uploaded to this repository. They show ma
 
 3) The Tool-Tip:
 
-![alt text](Screen_Captures/Screen_Capture_3-Tool-Tip.png)
+![alt text](Screen_Captures/Screen_Capture_3-Tool_Tip.png)
 
 4) The necessary ammendment to the index.html file:
 
